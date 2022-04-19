@@ -1,0 +1,35 @@
+\Large \textbf{فرایند ایستا}
+\large \textbf{(10 نمره)}
+
+\normalsize \vspace{0.5cm}
+
+باتوجه به اینکه فرایند بالا یک فرایند ایستا با میانگین صفر می‌باشد داریم:
+
+$$
+\begin{array}{c}
+	\mathbb{E}\left[ {X\left( {{t_i}} \right)} \right] = 0\\
+	{R_X}\left( {{t_i},{t_k}} \right) = \mathbb{E}\left[ {X\left( {{t_i}} \right)X\left( {{t_k}} \right)} \right] = {R_X}\left( {{t_i} - {t_k}} \right) = {R_X}\left( {\left( {i - k} \right)\frac{T}{2}} \right)
+\end{array}
+$$
+
+بنابراین برای میانگین داریم:
+
+$$
+\mathbb{E}\left[ {{{\hat \mu }_n}} \right] = \mathbb{E}\left[ {\frac{1}{n}\sum\limits_{i = 1}^n {X\left( {{t_i}} \right)} } \right] = \frac{1}{n}\sum\limits_{i = 1}^n {\mathbb{E}\left[ {X\left( {{t_i}} \right)} \right]}  = 0
+$$
+
+و برای واریانس:
+
+$$
+\begin{aligned}
+	Var\left( {{{\hat \mu }_n}} \right) & = \mathbb{E}\left[ {{{\left( {{{\hat \mu }_n} - \mathbb{E}\left[ {{{\hat \mu }_n}} \right]} \right)}^2}} \right] = \mathbb{E}\left[ {\hat \mu _n^2} \right]\\
+	& ‌=\mathbb{E}\left[ {\left( {\frac{1}{n}\sum\limits_{i = 1}^n {X\left( {{t_i}} \right)} } \right)\left( {\frac{1}{n}\sum\limits_{k = 1}^n {X\left( {{t_k}} \right)} } \right)} \right]\\
+	& = \frac{1}{{{n^2}}}\sum\limits_{i = 1}^n {\sum\limits_{k = 1}^n {\mathbb{E}\left[ {X\left( {{t_i}} \right)X\left( {{t_k}} \right)} \right]} } \\
+	& = \frac{1}{{{n^2}}}\sum\limits_{i = 1}^n {\sum\limits_{k = 1}^n {{R_X}\left( {\left( {i - k} \right)\frac{T}{2}} \right)} } 
+\end{aligned}
+$$
+
+طبق تابع autocorrelation داده شده داریم:
+$$
+Var\left( {{{\hat \mu }_n}} \right) = \frac{1}{{{n^2}}}\left( {2n - 1} \right)
+$$

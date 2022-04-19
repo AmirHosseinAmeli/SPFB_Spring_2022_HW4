@@ -1,0 +1,33 @@
+\Large \textbf{فرایند WSS}
+\large \textbf{(5.12 نمره)}
+
+\normalsize \vspace{0.5cm}
+
+\begin{enumerate}
+	\item
+	
+	$$
+	\mathbb{E}\left[ {X\left( t \right)} \right] = \mathbb{E}\left[ A \right]\mathbb{E}\left[ {u\left( {t - T} \right)} \right] = \mu P\left( {T < t} \right) = \mu \left( {1 - {e^{ - \lambda t}}} \right)
+	$$
+	
+	$$
+	\begin{aligned}
+		\mathbb{E}\left[ {X\left( {{t_1}} \right)X\left( {{t_2}} \right)} \right] & = {\mathbb{E}_A}\left[ {{\mathbb{E}_{X|A}}\left[ {X\left( {{t_1}} \right)X\left( {{t_2}} \right)|A} \right]} \right]\\
+		& = {\mathbb{E}_A}\left[ {{A^2}.P\left( {{t_1} > T,{t_2} > T} \right)} \right]\\
+		& = {\mathbb{E}_A}\left[ {{A^2}} \right]\left( {1 - {e^{ - \lambda \min ({t_1},{t_2})}}} \right)\\
+		& = \left( {{\sigma ^2} + {\mu ^2}} \right)\left( {1 - {e^{ - \lambda \min ({t_1},{t_2})}}} \right)
+	\end{aligned}
+	$$
+	
+	\item
+	
+	خیر. عملگر min باعث می‌شود که فرایند بالا WSS نباشد و برای تبدیل فرایند بالا به فرایند WSS،‌ چون
+	$\lambda$
+	مقدار بزرگتر از صفر باید داشته باشد پس باید
+	$\sigma$
+	و
+	$\mu$
+	هردو مقدار صفر داشته باشند.
+	
+	
+\end{enumerate}

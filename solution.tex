@@ -1,0 +1,27 @@
+% !TeX program = xelatex
+\input{template/packages}
+\usepackage{template/template}
+
+\begin{document}
+	\def\ci{\perp\!\!\!\perp}
+
+	% header{<Assignment-Number>}{<Assignment-Title>}{<Deadline-Date>}{<Gathered-by>}{<Supervised-by>}
+	\header{\small
+		پاسخ تمرین دوم
+	}{فرایندهای تصادفی ایستا و ارگادیک}{24 فروردین }{}{}
+
+	% partheader{<Part-Name>}{<Part-Total-Score>}
+
+	\begin{enumerate}
+		% question{<Question-TexFile-Path>}{<Question-Score>}
+		\question{solution/_th1}
+		\question{solution/th1}
+		\question{solution/th2}
+		\question{solution/th3}
+		\question{solution/_th4}
+		\question{solution/_th5}
+		\question{solution/th4}
+		\question{solution/th5}
+	\end{enumerate}
+
+\end{document}

@@ -1,0 +1,30 @@
+\Large \textbf{فرایند WSS و SSS}
+\large \textbf{(10 نمره)}
+
+\normalsize \vspace{0.5cm}
+باید دو شرط WSS بودن را بررسی کنیم:
+
+$$
+\begin{aligned}
+	{\mathbb{E}_Z}\left[ {Z\left( t \right)} \right] & = {\mathbb{E}_Y}\left[ {{\mathbb{E}_{Z|Y}}\left[ {Z\left( t \right)|Y\left( t \right)} \right]} \right]\\
+	&‌= {\mathbb{E}_Y}\left[ {{\mathbb{E}_{X|Y}}\left[ {X\left( {t + Y\left( t \right)} \right)|Y\left( t \right)} \right]} \right]\\
+	& = {\mathbb{E}_Y}\left[ {{\mu _X}} \right] = {\mu _X} = const
+\end{aligned}
+$$
+
+و همچنین داریم:
+
+$$
+\begin{aligned}
+	{R_Z}\left( {{t_1},{t_2}} \right) & = {\mathbb{E}_{Z\left( {{t_1}} \right),Z\left( {{t_2}} \right)}}\left[ {Z\left( {{t_1}} \right)Z\left( {{t_2}} \right)} \right] \\
+	& = {\mathbb{E}_{Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {{\mathbb{E}_{Z\left( {{t_1}} \right),Z\left( {{t_2}} \right)|Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {Z\left( {{t_1}} \right)Z\left( {{t_2}} \right)|Y\left( {{t_1}} \right)Y\left( {{t_2}} \right)} \right]} \right] \\
+	&‌= {\mathbb{E}_{Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {{\mathbb{E}_{X\left( {{t_1}} \right),X\left( {{t_2}} \right)|Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {X\left( {{t_1} + Y\left( {{t_1}} \right)} \right)X\left( {{t_2} + Y\left( {{t_2}} \right)} \right)|Y\left( {{t_1}} \right)Y\left( {{t_2}} \right)} \right]} \right]\\
+	& = {\mathbb{E}_{Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {{R_X}\left( {{t_1} - {t_2} + Y\left( {{t_1}} \right) - Y\left( {{t_2}} \right)} \right)} \right]\\
+	& = \int {{R_X}\left( {{t_1} - {t_2} + {y_1} - {y_2}} \right)f\left( {{y_1},{y_2};{t_1},{t_2}} \right)d{y_1}d{y_2}} \\
+	&‌= \int {{R_X}\left( {{t_1} - {t_2} + {y_1} - {y_2}} \right)f\left( {{y_1},{y_2};{t_1} - {t_2}} \right)d{y_1}d{y_2}} \\
+	&‌= {R_Z}\left( {{t_1} - {t_2}} \right)
+\end{aligned}
+$$
+
+
+بنابراین فرایند بالا یک فرایند WSS می‌باشد.

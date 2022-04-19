@@ -1,0 +1,123 @@
+\Large \textbf{فرایند متوالی}
+\large \textbf{(5.17 + 10 نمره)}
+
+\normalsize \vspace{0.5cm}
+\begin{enumerate}
+	\item
+	برای مثال در حالتی که
+	$\alpha = 0$
+	می‌باشد،‌ برای
+	$n > 1$
+	داریم:
+	$$
+	{X_n} = {Z_n}
+	$$
+	
+	بنابراین در هر زمان مقدار فرایند مستقل از زمان‌های دیگر و از توزیع نرمال خواهد بود.
+	
+	\item
+	طبق رابطه بازگشتی داده شده در صورت سوال داریم:
+	
+	$$
+	{X_n} = {\alpha ^n}{X_0} + \sum\limits_{i = 1}^n {{\alpha ^{n - i}}{Z_i}}
+	$$
+	
+	از طرفی اگر دقت کنیم،‌ طبق استقرا می‌توانیم اثبات کنیم که pdf مرتبه اول در هر لحظه زمانی برابر توزیع نرمال گاوسی می‌باشد.
+	
+	چون نمونه‌های
+	${Z_n}$
+	به صورت
+	\lr{i.i.d.}
+	می‌باشد پس در هر گام طبق رابطه بازگشتی جمع دو توزیع گاوسی مستقل از هم را داریم که متغیر تصادفی نهایی خود یک گاوسی با پارامتر‌های زیر می‌شود:
+	
+	$$
+	\begin{array}{l}
+		{\mu _{{X_n}}} = \alpha {\mu _{{X_{n - 1}}}} + {\mu _{{Z_n}}} = a \times 0 + 0 = 0\\
+		\sigma _{{X_n}}^2 = {\alpha ^2}\sigma _{{X_{n - 1}}}^2 + \sigma _{{Z_n}}^2 = {\alpha ^2} + \left( {1 - {\alpha ^2}} \right) = 1
+	\end{array}
+	$$
+	
+	\item
+	
+	طبق رابطه غیر بازگشتی بالا داریم:
+	
+	$$
+	\mathbb{E}\left[ {{X_n}} \right] = \mathbb{E}\left[ {{\alpha ^n}{X_0} + \sum\limits_{i = 1}^n {{\alpha ^{n - i}}{Z_i}} } \right] = 0
+	$$
+	
+	$$
+	\begin{aligned}
+		\mathbb{E}\left[ {{X_n}{X_m}} \right] & = \mathbb{E}\left[ {\left( {{\alpha ^n}{X_0} + \sum\limits_{i = 1}^n {{\alpha ^{n - i}}{Z_i}} } \right)\left( {{\alpha ^m}{X_0} + \sum\limits_{i = 1}^m {{\alpha ^{m - i}}{Z_i}} } \right)} \right]\\
+		& = \mathbb{E}\left[ {{\alpha ^{n + m}}X_0^2 + \sum\limits_{i = 1}^{\min (n,m)} {{\alpha ^{n + m - 2i}}Z_i^2} } \right]\\
+		& = {\alpha ^{n + m}} + \sum\limits_{i = 1}^{\min (n,m)} {{\alpha ^{n + m - 2i}}\left( {1 - {\alpha ^2}} \right)} \\
+		& ‌= {\alpha ^{n + m}} + \left( {{\alpha ^{n + m - 2\min \left( {n,m} \right)}} - {\alpha ^{n + m}}} \right)\\
+		&‌= {\alpha ^{\left| {n - m} \right|}}
+	\end{aligned}
+	$$
+	
+	بنابراین فرایند WSS می‌باشد.
+	
+	\item
+	
+	در این حالت، در هر لحظه زمانی یک آزمایش برنولی اتفاق می‌افتد و این متغیر تصادفی این آزمایش را با نماد
+	$\alpha_n$
+	در لحظه $n$ نشان می‌دهیم.
+	
+	بنابراین رابطه غیر بازگشتی مرحله قبل به صورت زیر تغییر می‌یابد:
+	
+	$$
+	{X_n} = \left( {\prod\limits_{i = 1}^n {{\alpha _i}} } \right){X_0} + \sum\limits_{i = 1}^n {\left( {\left( {\prod\limits_{j = 1}^{i - 1} {{\alpha _j}} } \right){Z_i}} \right)}
+	$$
+	
+	حال اگر توزیع توام تمام متغیر‌های تصادفی
+	$\alpha_i$
+	تا زمان n را با
+	${\phi _n}$
+	نشان دهیم که به دلیل مستقل بودن آزمایش‌های برنولی ضرب تعدادی توزیع برنولی در یک دیگر می‌باشد،‌ داریم:
+	
+	$$
+	\begin{aligned}
+		\mathbb{E}\left[ {{X_n}} \right] & = {\mathbb{E}_{{\phi _n}}}\left[ {{\mathbb{E}_{X|{\phi _n}}}\left[ {{X_n}} \right]} \right]\\
+		& = {\mathbb{E}_\alpha }\left[ {{E_{X|{\phi _n}}}\left[ {\left( {\prod\limits_{i = 1}^n {{\alpha _i}} } \right){X_0} + \sum\limits_{i = 1}^n {\left( {\left( {\prod\limits_{j = 1}^{i - 1} {{\alpha _j}} } \right){Z_i}} \right)} |{\phi _n}} \right]} \right] = 0
+	\end{aligned}
+	$$
+	
+	در مورد autocorrelation می‌توانیم هوشمندانه‌تر عمل کنیم و از نوشتن روابط پیچیده جلوگیری کنیم. در محاسبه
+	$\mathbb{E}\left[ {{X_n}{X_m}} \right]$
+	در مسیر رسیدن از اندیس زمانی کوچکتر به بزرگتر تعدادی متغیر تصادفی برنولی مشاهده می‌کنیم. طبق رابطه داده شده همانطور که مشخص است در صورتی که
+	$alpha=1$
+	باشد متغیر تصادفی لحظه بعدی دقیقا برابر متغیر تصادفی لحظه قبل می‌باشد (میانگین و واریانس
+	${Z_n}$
+	 برابر 0 می‌شود) و در حالتی که
+	 $alpha=0$
+	 باشد متغیر تصادفی مرحله قبلی حذف و
+	 ${Z_n}$
+	 جایگزین آن می‌شود.
+	 
+	 بنابراین در محاسبه عبارت
+	 $$
+	 \mathbb{E}\left[ {{X_n}{X_m}} \right] = {\mathbb{E}_\phi }\left[ {{\mathbb{E}_{X|\phi }}\left[ {{X_n}{X_m}|\phi } \right]} \right]
+	 $$
+	 
+	 می‌توانیم متغیر تصادفی
+	 $\phi$
+	 را با متغیر تصادفی برنولی جدید
+	 $\chi$
+	 با پارامتر
+	 $p' = {p^{\left| {n - m} \right|}}$
+	 جایگزین کنیم. چون در مسیر بازگشتی اگر تنها یکی از
+	 $\alpha$
+	 ها صفر شود دو متغیر
+	 $X_n$
+	 و
+	 $X_m$
+	 از همدیگر مستقل خواهند بود.
+	 
+	 بنابراین داریم:
+	 $$
+	 \mathbb{E}\left[ {{X_n}{X_m}} \right] = {\mathbb{E}_\chi }\left[ {{\mathbb{E}_{X|\chi }}\left[ {{X_n}{X_m}|\chi } \right]} \right] = P\left( {\chi  = 0} \right) \times 0 + P\left( {\chi  = 1} \right) \times 1 = {p^{\left| {n - m} \right|}}
+	 $$
+	 
+	بنابراین فرایند WSS می‌باشد.
+	
+\end{enumerate}
