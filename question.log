@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.6.29) (preloaded format=xelatex 2020.11.22)  17 MAR 2022 10:31
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.6.29) (preloaded format=xelatex 2020.11.22)  20 APR 2022 08:52
 entering extended mode
 **./question.tex
 (question.tex
@@ -1597,36 +1597,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 [][]
  []
 
-(questions/_th1.tex
+(questions/th1.tex
 LaTeX Font Info:    Font shape `TU/XBZar.ttf(0)/b/n' will be
 (Font)              scaled to size 14.25607pt on input line 2.
-) (questions/th1.tex) (questions/th2.tex
+) (questions/th2.tex) (questions/th3.tex
 (C:\Users\amira\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-ascii-pr
 int.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
 ) [1
 
-]) (questions/th3.tex) (questions/_th4.tex
-Missing character: There is no ِ in font cmmi12!
-) (questions/_th5.tex
-[2]) (questions/th4.tex) (questions/th5.tex) [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
+]) [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 26.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 26.
  (question.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 31.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 26.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 26.
 Package rerunfilecheck Info: File `question.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 31.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 26.
  ) 
 Here is how much of TeX's memory you used:
- 41975 strings out of 414071
- 970026 string characters out of 2894590
+ 41948 strings out of 414071
+ 969541 string characters out of 2894590
  1446010 words of memory out of 3000000
- 58837 multiletter control sequences out of 15000+200000
- 539808 words of font info for 87 fonts, out of 3000000 for 9000
+ 58826 multiletter control sequences out of 15000+200000
+ 539800 words of font info for 86 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 66i,9n,100p,4830b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 66i,5n,100p,4830b,614s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on question.pdf (3 pages).
+Output written on question.pdf (2 pages).
