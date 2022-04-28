@@ -1,98 +1,28 @@
-\Large \textbf{فرایندهای Ergodic Mean}
-\large \textbf{(25 نمره)}
+\Large \textbf{درست نادرست}
+\large \textbf{(۱۰ نمره)}
 
 \normalsize \vspace{0.5cm}
 
-\begin{enumerate}
-	\item
-	برای فرایند داده شده داریم:
-	$$
-	\begin{aligned}
-		\mathbb{E}\left[ {X\left( t \right)} \right] & = \mathbb{E}\left[ {{X_1}\left( t \right)} \right] + \mathbb{E}\left[ {c{X_2}\left( t \right)} \right]\\
-		& = \mathbb{E}\left[ {{X_1}\left( t \right)} \right] + \mathbb{E}\left[ c \right]\mathbb{E}\left[ {{X_2}\left( t \right)} \right]\\
-		& = {\eta _1} + 0.5{\eta _2}
-	\end{aligned}
-	$$
-	
-	این در حالی است که برای
-	\lr{sample path}
-	ای که
-	\lr{c=0}
-	می‌باشد
-	$X\left( t \right) = {X_1}\left( t \right)$
-	می‌باشد که در نتیجه وقتی
-	$T \to \infty$
-	میانگین بدست آمده برابر
-	${\eta _T} \to {\eta _1}$
-	خواهد بود. بنابراین فرایند داده شده
-	\lr{Mean Ergodic}
-	نمی‌باشد.
-	
-	
-	\item
-	شرط لازم
-	\lr{Mean Ergodic}
-	بودن ایستایی فرایند می‌باشد. بنابراین داریم:
-	
-	$$
-	\mathbb{E}\left[ {X\left( t \right)} \right] = \mathbb{E}\left[ a \right]\cos \left( {\omega t} \right) + \mathbb{E}\left[ b \right]\sin \left( {\omega t} \right) + \mathbb{E}\left[ c \right] = c
-	$$
-	
-	$$
-	\begin{aligned}
-		\mathbb{E}\left[ {X\left( {{t_1}} \right)X\left( {{t_2}} \right)} \right] & = && \mathbb{E}\left[ {{a^2}} \right]\cos \left( {\omega {t_1}} \right)\cos \left( {\omega {t_2}} \right) + {c^2}\\
-		& && + \mathbb{E}\left[ a \right]\mathbb{E}\left[ b \right]\cos \left( {\omega {t_1}} \right)\sin \left( {\omega {t_2}} \right) + \mathbb{E}\left[ a \right]\cos \left( {\omega {t_1}} \right)c\\
-		& && + \mathbb{E}\left[ a \right]\mathbb{E}\left[ b \right]\sin \left( {\omega {t_1}} \right)\cos \left( {\omega {t_2}} \right) + \mathbb{E}\left[ b \right]\sin \left( {\omega {t_1}} \right)c\\
-		& && + \mathbb{E}\left[ {{b^2}} \right]\sin \left( {\omega {t_1}} \right)\sin \left( {\omega {t_2}} \right) + \mathbb{E}\left[ a \right]\cos \left( {\omega {t_2}} \right)c\\
-		& && + \mathbb{E}\left[ b \right]\sin \left( {\omega {t_2}} \right)c\\
-		& = && \mathbb{E}\left[ {{a^2}} \right]\cos \left( {\omega {t_1}} \right)\cos \left( {\omega {t_2}} \right) + \mathbb{E}\left[ {{b^2}} \right]\sin \left( {\omega {t_1}} \right)\sin \left( {\omega {t_2}} \right) + {c^2}\\
-		& = && {\sigma ^2}\cos \left( {\omega \left( {{t_1} - {t_2}} \right)} \right) + {c^2}
-	\end{aligned}
-	$$
-	
-	بنابراین فرایند WSS می‌باشد. حال طبق قضیه Slutsky داریم:
-	
-	$$
-	\begin{aligned}
-		\mathop {\lim }\limits_{T \to \infty } \frac{1}{T}\int_0^T {C\left( \tau  \right)d\tau }  & = \mathop {\lim }\limits_{T \to \infty } \frac{1}{T}\int_0^T {{\sigma ^2}\cos \left( {\omega \tau } \right)d\tau } \\
-		& = \mathop {\lim }\limits_{T \to \infty } \frac{{{\sigma ^2}}}{{\omega \tau }}\sin \left( {\omega \tau } \right)\\
-		& = 0
-	\end{aligned}
-	$$
-	
-	بنابراین فرایند
-	\lr{Mean Ergodic}
-	می‌باشد.
-	
-	\item
-	مشابه بخش قبل ابتدا WSS بودن یا نبودن فرایند را بررسی می‌کنیم:
-	
-	$$
-	\mathbb{E}\left[ {X\left( t \right)} \right] = A\mathbb{E}\left[ {\cos \left( {\omega t + \phi } \right)} \right] = \frac{1}{{2\pi }}\int_0^{2\pi } {\cos \left( {\omega t + \theta } \right)d\theta }  = 0
-	$$
-	
-	$$
-	\begin{aligned}
-		\mathbb{E}\left[ {X\left( {{t_1}} \right)X\left( {{t_2}} \right)} \right] & = {A^2}\mathbb{E}\left[ {\cos \left( {\omega {t_1} + \phi } \right)\cos \left( {\omega {t_2} + \phi } \right)} \right]\\
-		& = \frac{{{A^2}}}{2}\mathbb{E}\left[ {\cos \left( {\omega \left( {{t_1} - {t_2}} \right)} \right) + \cos \left( {\omega \left( {{t_1} + {t_2}} \right) + 2\phi } \right)} \right]\\
-		& = \frac{{{A^2}}}{2}\left[ {\mathbb{E}\left[ {\cos \left( {\omega \left( {{t_1} - {t_2}} \right)} \right)} \right] + \mathbb{E}\left[ {\cos \left( {\omega \left( {{t_1} + {t_2}} \right) + 2\phi } \right)} \right]} \right]\\
-		& = \frac{{{A^2}}}{2}\cos \left( {\omega \left( {{t_1} - {t_2}} \right)} \right)
-	\end{aligned}
-	$$
-	
-	بنابراین فرایند WSS می‌باشد. حال طبق قضیه Slutsky داریم:
-	
-	$$
-	\begin{aligned}
-		\mathop {\lim }\limits_{T \to \infty } \frac{1}{T}\int_0^T {C\left( \tau  \right)d\tau }  & = \mathop {\lim }\limits_{T \to \infty } \frac{1}{T}\int_0^T {\frac{{{A^2}}}{2}\cos \left( {\omega \tau } \right)d\tau } \\
-		& = \mathop {\lim }\limits_{T \to \infty } \frac{{{A^2}}}{{2\omega \tau }}\sin \left( {\omega \tau } \right)\\
-		& = 0
-	\end{aligned}
-	$$
-	
-	بنابراین فرایند
-	\lr{Mean Ergodic}
-	می‌باشد.
-	
-	
-\end{enumerate}
+پاسخ عمومی مساله به صورت زیر است:
+$$
+{a_k} = {c_1} + {c_2}{\left( {\frac{q}{p}} \right)^k}
+$$
+
+با اعمال شرایط مرزی داریم:
+
+$$
+\begin{array}{l}
+	{a_{ - N}} = {c_1} + {c_2}{\left( {\frac{q}{p}} \right)^{ - N}} = 0\\
+	{a_N} = {c_1} + {c_2}{\left( {\frac{q}{p}} \right)^N} = 1
+\end{array}
+$$
+
+با حل معادلات بالا و بدست آوردم
+${c_1}$
+و
+${c_2}$
+داریم:
+
+$$
+{a_k} = \frac{1}{{1 - {{\left( {\frac{q}{p}} \right)}^{2N}}}} + \frac{{{{\left( {\frac{q}{p}} \right)}^k}}}{{{{\left( {\frac{q}{p}} \right)}^N} - {{\left( {\frac{q}{p}} \right)}^{ - N}}}}
+$$

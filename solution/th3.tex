@@ -1,30 +1,102 @@
-\Large \textbf{فرایند WSS و SSS}
-\large \textbf{(10 نمره)}
+\Large \textbf{درست نادرست}
+\large \textbf{(۱۰ نمره)}
 
 \normalsize \vspace{0.5cm}
-باید دو شرط WSS بودن را بررسی کنیم:
 
-$$
-\begin{aligned}
-	{\mathbb{E}_Z}\left[ {Z\left( t \right)} \right] & = {\mathbb{E}_Y}\left[ {{\mathbb{E}_{Z|Y}}\left[ {Z\left( t \right)|Y\left( t \right)} \right]} \right]\\
-	&‌= {\mathbb{E}_Y}\left[ {{\mathbb{E}_{X|Y}}\left[ {X\left( {t + Y\left( t \right)} \right)|Y\left( t \right)} \right]} \right]\\
-	& = {\mathbb{E}_Y}\left[ {{\mu _X}} \right] = {\mu _X} = const
-\end{aligned}
-$$
-
-و همچنین داریم:
-
-$$
-\begin{aligned}
-	{R_Z}\left( {{t_1},{t_2}} \right) & = {\mathbb{E}_{Z\left( {{t_1}} \right),Z\left( {{t_2}} \right)}}\left[ {Z\left( {{t_1}} \right)Z\left( {{t_2}} \right)} \right] \\
-	& = {\mathbb{E}_{Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {{\mathbb{E}_{Z\left( {{t_1}} \right),Z\left( {{t_2}} \right)|Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {Z\left( {{t_1}} \right)Z\left( {{t_2}} \right)|Y\left( {{t_1}} \right)Y\left( {{t_2}} \right)} \right]} \right] \\
-	&‌= {\mathbb{E}_{Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {{\mathbb{E}_{X\left( {{t_1}} \right),X\left( {{t_2}} \right)|Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {X\left( {{t_1} + Y\left( {{t_1}} \right)} \right)X\left( {{t_2} + Y\left( {{t_2}} \right)} \right)|Y\left( {{t_1}} \right)Y\left( {{t_2}} \right)} \right]} \right]\\
-	& = {\mathbb{E}_{Y\left( {{t_1}} \right),Y\left( {{t_2}} \right)}}\left[ {{R_X}\left( {{t_1} - {t_2} + Y\left( {{t_1}} \right) - Y\left( {{t_2}} \right)} \right)} \right]\\
-	& = \int {{R_X}\left( {{t_1} - {t_2} + {y_1} - {y_2}} \right)f\left( {{y_1},{y_2};{t_1},{t_2}} \right)d{y_1}d{y_2}} \\
-	&‌= \int {{R_X}\left( {{t_1} - {t_2} + {y_1} - {y_2}} \right)f\left( {{y_1},{y_2};{t_1} - {t_2}} \right)d{y_1}d{y_2}} \\
-	&‌= {R_Z}\left( {{t_1} - {t_2}} \right)
-\end{aligned}
-$$
-
-
-بنابراین فرایند بالا یک فرایند WSS می‌باشد.
+\begin{enumerate}[label=(\alph*)]
+	\item
+	راه حل سریع:\\
+	
+	باتوجه به اینکه تنها یک گره جذب کننده داریم و فرایند irreducible می‌باشد پس احتمال رسیدن به گره $N$ از تمام گره ها برای 1 می‌باشد.
+	راه حل طولانی:
+	رابطه احتمال مطلوب را برای گره 0 می‌نویسیم:
+	$$
+	\begin{array}{c}
+		{a_0} = p{a_1} + q{a_0}\\
+		p{a_0} = p{a_1}\\
+		{a_0} = {a_1}
+	\end{array}
+	$$
+	
+	با نتیجه بدست آمده اگر رابطه احتمال را برای گره 1 بنویسیم داریم:
+	$$
+	\begin{array}{c}
+		{a_1} = q{a_0} + p{a_2}\\
+		{a_1} - q{a_0} = p{a_2}\\
+		p{a_1} = p{a_2}\\
+		{a_1} = {a_2}
+	\end{array}
+	$$
+	
+	این روند همینطور ادامه دارد تا اینکه به گره ما قبل آخر برسیم:
+	$$
+	\begin{array}{c}
+		{a_{N - 1}} = q{a_{N - 2}} + p\\
+		p{a_{N - 1}} = p\\
+		{a_{N - 1}} = 1
+	\end{array}
+	$$
+	
+	بنابراین مقدار احتمال برای تمام گره‌ها 1 می‌باشد.
+	
+	\item
+	
+	با شروع از گره 0 روابط مطلوب را مینویسیم:
+	$$
+	\begin{array}{c}
+		{\tau _0} = p(1 + {\tau _1}) + q(1 + {\tau _0})\\
+		p{\tau _0} = 1 + p{\tau _1}\\
+		{\tau _0} = 2 + {\tau _1}
+	\end{array}
+	$$
+	
+	‌برای گره 1 داریم:
+	$$
+	\begin{array}{c}
+		{\tau _1} = p(1 + {\tau _2}) + q(1 + {\tau _0})\\
+		{\tau _1} - q{\tau _0} = 1 + p{\tau _2}\\
+		{\tau _1} - 1 - 0.5{\tau _1} = 1 + 0.5{\tau _2}\\
+		{\tau _1} = 4 + {\tau _2}
+	\end{array}
+	$$
+	
+	و اگر برای گره 2 نیز بنویسیم:
+	$$
+	\begin{array}{c}
+		{\tau _2} = p(1 + {\tau _3}) + q(1 + {\tau _1})\\
+		{\tau _2} - q{\tau _1} = 1 + p{\tau _3}\\
+		{\tau _2} - 2 - 0.5{\tau _2} = 1 + 0.5{\tau _3}\\
+		{\tau _2} = 6 + {\tau _3}
+	\end{array}
+	$$
+	
+	مشاهده می‌شود که برای گره‌های 0 تا
+	$N-2$
+	می‌توان یک رابطه کلی برای
+	$i \in \left\{ {1,2, \ldots ,N - 1} \right\}$
+	به صورت زیر نوشت که:
+	$$
+	{\tau _{i - 1}} = 2i + {\tau _i}
+	$$
+	حال برای گره
+	$N-1$
+	نیز داریم:
+	$$
+	\begin{array}{c}
+		{\tau _{N - 1}} = p(1 + {\tau _N}) + q(1 + {\tau _{N - 2}})\\
+		{\tau _{N - 1}} = p + q(1 + {\tau _{N - 2}})\\
+		{\tau _{N - 1}} = 1 + 0.5{\tau _{N - 2}}
+	\end{array}
+	$$
+	
+	از طرفی در رابطه‌های بازگشتی نیز داشتیم:
+	$$
+	{\tau _{N - 2}} = 2N - 2 + {\tau _{N - 1}}
+	$$
+	
+	با حل دو معادله دو مجهولی بالا برای
+	${\tau _{N - 1}}$
+	داریم:
+	${\tau _{N - 1}} = 2N$
+	با استفاده از روابط بازگشتی نیز بقیه مقادیر یافت می‌شوند.
+\end{enumerate}

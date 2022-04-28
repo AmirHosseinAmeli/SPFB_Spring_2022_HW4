@@ -1,35 +1,81 @@
-\Large \textbf{فرایند ایستا}
-\large \textbf{(10 نمره)}
+\Large \textbf{درست نادرست}
+\large \textbf{(۱۰ نمره)}
 
 \normalsize \vspace{0.5cm}
 
-باتوجه به اینکه فرایند بالا یک فرایند ایستا با میانگین صفر می‌باشد داریم:
-
-$$
-\begin{array}{c}
-	\mathbb{E}\left[ {X\left( {{t_i}} \right)} \right] = 0\\
-	{R_X}\left( {{t_i},{t_k}} \right) = \mathbb{E}\left[ {X\left( {{t_i}} \right)X\left( {{t_k}} \right)} \right] = {R_X}\left( {{t_i} - {t_k}} \right) = {R_X}\left( {\left( {i - k} \right)\frac{T}{2}} \right)
-\end{array}
-$$
-
-بنابراین برای میانگین داریم:
-
-$$
-\mathbb{E}\left[ {{{\hat \mu }_n}} \right] = \mathbb{E}\left[ {\frac{1}{n}\sum\limits_{i = 1}^n {X\left( {{t_i}} \right)} } \right] = \frac{1}{n}\sum\limits_{i = 1}^n {\mathbb{E}\left[ {X\left( {{t_i}} \right)} \right]}  = 0
-$$
-
-و برای واریانس:
-
-$$
-\begin{aligned}
-	Var\left( {{{\hat \mu }_n}} \right) & = \mathbb{E}\left[ {{{\left( {{{\hat \mu }_n} - \mathbb{E}\left[ {{{\hat \mu }_n}} \right]} \right)}^2}} \right] = \mathbb{E}\left[ {\hat \mu _n^2} \right]\\
-	& ‌=\mathbb{E}\left[ {\left( {\frac{1}{n}\sum\limits_{i = 1}^n {X\left( {{t_i}} \right)} } \right)\left( {\frac{1}{n}\sum\limits_{k = 1}^n {X\left( {{t_k}} \right)} } \right)} \right]\\
-	& = \frac{1}{{{n^2}}}\sum\limits_{i = 1}^n {\sum\limits_{k = 1}^n {\mathbb{E}\left[ {X\left( {{t_i}} \right)X\left( {{t_k}} \right)} \right]} } \\
-	& = \frac{1}{{{n^2}}}\sum\limits_{i = 1}^n {\sum\limits_{k = 1}^n {{R_X}\left( {\left( {i - k} \right)\frac{T}{2}} \right)} } 
-\end{aligned}
-$$
-
-طبق تابع autocorrelation داده شده داریم:
-$$
-Var\left( {{{\hat \mu }_n}} \right) = \frac{1}{{{n^2}}}\left( {2n - 1} \right)
-$$
+\begin{enumerate}[label=(\alph*)]
+	\item
+	مشابه بازی قمارباز معمولی داریم:
+	$$
+	\begin{array}{c}
+		{a_k} = p{a_{k + 1}} + q{a_{k - 1}} + r{a_k}\\
+		p{a_{k + 1}} - \left( {1 - r} \right){a_k} + q{a_{k - 1}} = 0\\
+		p{\lambda ^2} - \left( {1 - r} \right)\lambda  + q = 0
+	\end{array}
+	$$
+	
+	$$
+	{\lambda _{1,2}} = \frac{{\left( {1 - r} \right) \pm \sqrt {{{\left( {1 - r} \right)}^2} - 4pq} }}{{2p}}
+	$$
+	
+	$$
+	\begin{array}{c}
+		p + q + r = 1\\
+		p + q = 1 - r\\
+		{\left( {p + q} \right)^2} = {\left( {1 - r} \right)^2}\\
+		p + q - 2qp = {\left( {p - q} \right)^2} = {\left( {1 - r} \right)^2} - 4qp
+	\end{array}
+	$$
+	
+	$$
+	{\lambda _{1,2}} = \frac{{\left( {1 - r} \right) \pm \left| {p - q} \right|}}{{2p}} = \frac{{p + q \pm \left| {p - q} \right|}}{{2p}}
+	$$
+	
+	بنابراین جواب های بدست آمده دقیقا برابر حالت معمولی مسئله قمارباز شد و مقادیر
+	${a_k}$
+	برای حالتی که
+	$p \ne q$
+	برابر
+	$$
+	{a_k} = \frac{{{{\left( {\frac{q}{p}} \right)}^N} - {{\left( {\frac{q}{p}} \right)}^k}}}{{{{\left( {\frac{q}{p}} \right)}^N} - 1}}
+	$$
+	
+	می‌باشد.
+	
+	\item
+	
+	مشابه بخش قبل داریم:
+	
+	$$
+	\begin{array}{c}
+		{\tau _k} = p\left( {1 + {\tau _{k + 1}}} \right) + q\left( {1 + {\tau _{k - 1}}} \right) + r\left( {1 + {\tau _k}} \right)\\
+		p{\tau _{k + 1}} - \left( {1 - r} \right){\tau _k} + q{\tau _{k - 1}} =  - 1
+	\end{array}
+	$$
+	
+	طبق مشابهت رابطه بالا با بخش الف،‌ جواب عمومی
+	${\tau _k}$
+	مشابه جواب بخش الف خواهد بود. برای جواب خصوصی با در نظر گرفتن
+	${\tau _k} = ck$
+	داریم:
+	$$
+	\begin{array}{c}
+		pc\left( {k + 1} \right) - \left( {1 - r} \right)ck + qc\left( {k - 1} \right) =  - 1\\
+		c\left( {pk + p - k + rk + qk - q} \right) =  - 1\\
+		c = \frac{1}{{q - p}}
+	\end{array}
+	$$
+	
+	همانطور که مشهود است،‌ جواب های مقدار متوسط زمان پایان بازی نیز مشابه حالت معمولی بازی شد.
+	
+	\item
+	با اثبات مشابه بودن این حالت به حالت معمولی،‌ جواب های این بخش نیز برابر جوابهای مسئله معمولی قمارباز می‌شود.
+	(نوشتن مراحل برای اخد نمره نیاز است.)
+	
+	به صورت شهودی نیز مشخص بود که با چنین تغییراتی در صورتی که نسبت q به p ثابت باقی بماند مقدار
+	${a_k}$ 
+	تغییر نخواهد کرد. چون تغییری که در حالت فعلی ایجاد میشود تنها توسط p و q اتفاق می افتد. همچنین با افرایش r مقادیر p و q کمتر از حالتی می شود که
+	$r= = 0$
+	باشد و انتظار میرود زمان جذب بیشتر شود که در رابطه متناظر خود را در بخش اول که تفاضل p و q می باشد نشان می‌دهد.
+	
+\end{enumerate}
